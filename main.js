@@ -35,11 +35,11 @@
     };
 
     function checkOut(info) {
-        let period = new Date() - new Date(info[2].dataset.time);
+        let period = new Date() - new Date(info[4].dataset.time);
         period = convertPeriod(period);
 
         const licence = info[1].textContent;
-        const msg = `O veículo ${info[0].textContent} de placa ${licence} permaneceu ${period} estacionado. \n\n Deseja encerrar?`;
+        const msg = `O Cliente ${info[0].textContent} de CNH ${info[1].textContent} proprietário do veiculo ${info[2].textContent} de placa ${info[3].textContent} permaneceu ${period} estacionado. \n\n Deseja encerrar?`;
 
         if(!confirm(msg)) return;
         
@@ -58,7 +58,7 @@
         const name = $("#name").value;
         const licence = $("#licence").value;
 
-        if(!cliente || !cnh ||  !name || !licence){
+        if(!cliente || !cnh || !name || !licence){
             alert("Os campos são obrigatórios.");
             return;
         }   
