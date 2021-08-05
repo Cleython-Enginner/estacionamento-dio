@@ -17,6 +17,7 @@
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${car.cliente}</td>
+            <td>${car.cnh}</td>
             <td>${car.name}</td>
             <td>${car.licence}</td>
             <td data-time="${car.time}">
@@ -53,15 +54,16 @@
     renderGarage();
     $("#send").addEventListener("click", e => {
         const cliente = $("#cliente").value;
+        const cnh = $("#cnh").value;
         const name = $("#name").value;
         const licence = $("#licence").value;
 
-        if(!cliente ||  !name || !licence){
+        if(!cliente || !cnh ||  !name || !licence){
             alert("Os campos são obrigatórios.");
             return;
         }   
 
-        const card = { cliente, name, licence, time: new Date() };
+        const card = { cliente, cnh, name, licence, time: new Date() };
 
         const garage = getGarage();
         garage.push(card);
@@ -70,6 +72,7 @@
 
         addCarToGarage(card);
         $("#cliente").value = "";
+        $("#cnh").value = "";
         $("#name").value = "";
         $("#licence").value = "";
     });
