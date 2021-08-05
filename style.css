@@ -7,12 +7,15 @@
 body {
     width: 50%;
     margin: 2rem auto;
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 div {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: #eee;
+    background-color: rgb(100, 17, 17);
     padding: 0.7rem;
 }
 
@@ -31,7 +34,7 @@ button {
 }
 
 .success {
-    background-color: rgb(54, 80, 231);
+    background-color: rgb(14, 100, 40);
     color: rgb(255, 255, 255);
 }
 
@@ -42,7 +45,7 @@ button {
 
 
 table {
-    background-color: #eee;
+    background-color: rgb(163, 196, 174);
     margin-top: .9rem;
     border-collapse: collapse;
     width: 100%;

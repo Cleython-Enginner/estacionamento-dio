@@ -16,6 +16,7 @@
     function addCarToGarage (car) {
         const row = document.createElement("tr");
         row.innerHTML = `
+            <td>${car.cliente}</td>
             <td>${car.name}</td>
             <td>${car.licence}</td>
             <td data-time="${car.time}">
@@ -51,15 +52,16 @@
 
     renderGarage();
     $("#send").addEventListener("click", e => {
+        const cliente = $("#cliente").value;
         const name = $("#name").value;
         const licence = $("#licence").value;
 
-        if(!name || !licence){
+        if(!cliente ||  !name || !licence){
             alert("Os campos são obrigatórios.");
             return;
         }   
 
-        const card = { name, licence, time: new Date() };
+        const card = { cliente, name, licence, time: new Date() };
 
         const garage = getGarage();
         garage.push(card);
@@ -67,6 +69,7 @@
         localStorage.garage = JSON.stringify(garage);
 
         addCarToGarage(card);
+        $("#cliente").value = "";
         $("#name").value = "";
         $("#licence").value = "";
     });

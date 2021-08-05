@@ -9,6 +9,7 @@
 </head>
 <body>
     <div>
+        <input type="text" id="cliente" placeholder="Nome do Cliente" autocomplete="off">
         <input type="text" id="name" placeholder="Nome do veículo" autocomplete="off">
         <input type="text" id="licence" placeholder="Placa do veículo" autocomplete="off">
         <button id="send" class="success">Registrar</button>
@@ -16,10 +17,14 @@
     <table>
         <thead>
             <tr>
-                <th>Veículo</th>
+                <th>Cliente</th>
+                <th>Veiculo</th>
                 <th>Placa</th>
                 <th>Entrada</th>
                 <th>Ações</th>
+               
+               
+                
             </tr>
         </thead>
         <tbody id="garage"></tbody>
