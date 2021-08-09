@@ -17,7 +17,6 @@
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${car.cliente}</td>
-            <td>${car.cnh}</td>
             <td>${car.name}</td>
             <td>${car.licence}</td>
             <td data-time="${car.time}">
@@ -39,7 +38,7 @@
         period = convertPeriod(period);
 
         const licence = info[1].textContent;
-        const msg = `O Cliente ${info[0].textContent} de CNH ${info[1].textContent} proprietário do veiculo ${info[2].textContent} de placa ${info[3].textContent} permaneceu ${period} estacionado. \n\n Deseja encerrar?`;
+        const msg = `O Cliente ${info[0].textContent}  proprietário do veiculo ${info[1].textContent} de placa ${info[2].textContent} permaneceu ${period} estacionado. \n\n Deseja encerrar?`;
 
         if(!confirm(msg)) return;
         
